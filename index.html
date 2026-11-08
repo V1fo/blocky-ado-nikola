@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="sk" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>Bločky: Aďo & Nikola</title>
+    
+    <!-- PWA & Apple iOS Meta Tags -->
+    <meta name="description" content="Moderné a férové delenie nákupných bločkov (najmä Lidl) medzi dvoch ľudí s AI a Lidl Plus podporou." />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Bločky" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="theme-color" content="#090d16" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f1f5f9" media="(prefers-color-scheme: light)" />
+
+    <!-- Icons -->
+    <link rel="icon" type="image/svg+xml" href="./icon.svg" />
+    <link rel="apple-touch-icon" href="./icon-apple.png" />
+    <link rel="manifest" href="./manifest.json" />
+
+    <!-- Preconnect Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+      /* iOS safe area variables & scrollbar refinement */
+      :root {
+        --sat: env(safe-area-inset-top, 0px);
+        --sab: env(safe-area-inset-bottom, 0px);
+        --sal: env(safe-area-inset-left, 0px);
+        --sar: env(safe-area-inset-right, 0px);
+      }
+      
+      body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+        overscroll-behavior-y: none;
+      }
+
+      /* Custom delicate scrollbars */
+      ::-webkit-scrollbar {
+        width: 4px;
+        height: 4px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: rgba(148, 163, 184, 0.3);
+        border-radius: 9999px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: rgba(148, 163, 184, 0.5);
+      }
+    </style>
+    <script type="module" crossorigin src="./assets/index-9osK0EP7.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-dy5v11us.css">
+  </head>
+  <body class="bg-slate-100 text-slate-800 dark:bg-[#080d1a] dark:text-slate-100 transition-colors duration-300 min-h-screen">
+    <div id="root"></div>
+    <script>
+      // Register Service Worker
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js').then(
+            (reg) => console.log('ServiceWorker registered:', reg.scope),
+            (err) => console.log('ServiceWorker registration failed:', err)
+          );
+        });
+      }
+    </script>
+  </body>
+</html>
